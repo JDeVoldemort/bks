@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Inventory } from '../inventory.model';
 
 @Component({
   selector: 'app-inventory-item',
-  standalone: true,
-  imports: [],
   templateUrl: './inventory-item.component.html',
-  styleUrl: './inventory-item.component.css'
+  styleUrls: ['./inventory-item.component.css']
 })
 export class InventoryItemComponent {
-
+  @Input() inventoryItem!: Inventory;
 }
