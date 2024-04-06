@@ -49,13 +49,13 @@ app.use(express.static(path.join(__dirname, 'dist/bks/browser')));
 // Tell express to map the default route ('/') to the index route
 app.use('/', index);
 const requestRoutes = require('./server/routes/requests');
-const favoriteRoutes = require('./server/routes/favorites');
+// const favoriteRoutes = require('./server/routes/favorites');
 const inventoryRoutes = require('./server/routes/inventory');
 
 // Map your URLs to routing files
 app.use('/inventory', inventoryRoutes);
 app.use('/requests', requestRoutes);
-app.use('/favorites', favoriteRoutes);
+// app.use('/favorites', favoriteRoutes);
 
 // Tell express to map all other non-defined routes back to the index page
 app.get('*', (req, res) => {

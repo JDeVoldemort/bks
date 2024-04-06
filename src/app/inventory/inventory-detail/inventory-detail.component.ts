@@ -21,7 +21,7 @@ export class InventoryDetailComponent implements OnInit {
     this.route.params
       .subscribe(
         (params: Params) => {
-          this.id = params['_id.$oid'];
+          this.id = params['id'];
           this.inventory = this.inventoryService.getInventoryItem(this.id)!;
         }
       );

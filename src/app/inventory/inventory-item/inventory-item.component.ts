@@ -7,5 +7,6 @@ import { Inventory } from '../inventory.model';
   styleUrls: ['./inventory-item.component.css']
 })
 export class InventoryItemComponent {
-  @Input() inventoryItem!: Inventory;
+  @Input() inventory!: Inventory;
+  @Input() index!: number;
 }

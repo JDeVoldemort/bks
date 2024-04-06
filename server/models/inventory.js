@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 
 const inventorySchema = mongoose.Schema({
-  id: { type: String, required: true }, // Add this line
-  _id: mongoose.Schema.Types.ObjectId,
+  id: { type: String, required: true },
   name: { type: String, required: true },
   pages: { type: Number, required: true },
   author: { type: String, required: true },

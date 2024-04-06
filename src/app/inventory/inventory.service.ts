@@ -24,10 +24,14 @@ export class InventoryService {
       .get<Inventory[]>(this.jsonURL)
       .subscribe((inventorys: Inventory[]) => {
         this.inventorys = inventorys;
+        console.log(this.inventorys);
+        console.log(JSON.stringify(this.inventorys));
         this.maxInventoryItemId = this.getMaxId();
         this.sortInventoryItems();
         this.inventoryItemListChangedEvent.next([...this.inventorys.slice()]);
+        console.log(this.inventorys);
       });
+      console.log(this.inventorys.slice());
     return this.inventorys.slice();
   }
 
@@ -63,7 +67,7 @@ export class InventoryService {
 
   addInventoryItem(newInventoryItem: Inventory) {
     if (!newInventoryItem) return;
-    newInventoryItem._id.$oid = '';
+    newInventoryItem.id = '';
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     this.httpClient

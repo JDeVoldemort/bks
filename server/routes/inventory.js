@@ -5,9 +5,9 @@ const Inventory = require('../models/inventory');
 
 router.get('/', async (req, res, next) => {
     try {
-        const inventoryItems = await Inventory.find();
+        const inventorys = await Inventory.find();
 
-        res.status(200).json(inventoryItems);
+        res.status(200).json(inventorys);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -18,7 +18,7 @@ router.post('/', async (req, res, next) => {
     const maxInventoryId = await sequenceGenerator.nextId("inventory");
 
     const inventoryItem = new Inventory({
-      _id: maxInventoryId,
+      id: maxInventoryId,
       name: req.body.name,
       pages: req.body.pages,
       author: req.body.author,
@@ -52,6 +52,7 @@ router.put('/:id', (req, res, next) => {
       inventoryItem.aquireDate = req.body.aquireDate;
       inventoryItem.publisher = req.body.publisher;
       inventoryItem.edition = req.body.edition;
+      // inventoryItem.id = req.body.id;
 
       Inventory.updateOne({ _id: req.params.id }, inventoryItem)
         .then(result => {

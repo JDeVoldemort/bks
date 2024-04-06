@@ -1,13 +1,10 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <div class="row pad-left-right">
-      <span class="pull-left title">{{ inventoryItem.name }}</span>
-    </div>
-  </div>
-  <div class="panel-body">
-    <p>Author: {{ inventoryItem.author }}</p>
-    <p>Publish Date: {{ inventoryItem.publishDate }}</p>
-    <p>Publisher: {{ inventoryItem.publisher }}</p>
-    <p>Edition: {{ inventoryItem.edition }}</p>
-  </div>
-</div>
+<p class="list-group-item clearfix documentDiv" [routerLink]="[inventory.id]" routerLinkActive="active" class="list-group-item clearfix">
+
+  <!-- <div class="panel-body"> -->
+    Title: {{ inventory.name }}
+    Author: {{ inventory.author }}
+    Publish Date: {{ inventory.publishDate }}
+    Publisher: {{ inventory.publisher }}
+    Edition: {{ inventory.edition }}
+  <!-- </div> -->
+  </p>

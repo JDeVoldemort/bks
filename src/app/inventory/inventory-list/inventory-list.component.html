@@ -6,9 +6,9 @@
     </div>
   </div>
   <div class="panel-body">
-    <div class="center-panel" *ngFor="let inventoryItem of inventorys" >
+    <div class="center-panel" *ngFor="let inventory of inventorys" >
       <app-inventory-item
-      [inventoryItem]="inventoryItem"
+      [inventory]="inventory"
       ></app-inventory-item>
     </div>
   </div>

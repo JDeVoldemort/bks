@@ -1,5 +1,6 @@
 export class Favorites {
-  public _id: { $oid: string };
+  public _id: any;
+  public id: number;
   public name: string;
   public pages: number;
   public author: string;
@@ -8,8 +9,8 @@ export class Favorites {
   public publisher: string;
   public edition: string;
 
-  constructor(_id: { $oid: string }, name: string, pages: number, author: string, publishDate: string, aquireDate: string, publisher: string, edition: string) {
-    this._id = _id;
+  constructor(id: number, name: string, pages: number, author: string, publishDate: string, aquireDate: string, publisher: string, edition: string) {
+    this.id = id;
     this.name = name;
     this.pages = pages;
     this.author = author;

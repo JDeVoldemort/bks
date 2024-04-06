@@ -20,10 +20,12 @@ export class InventoryListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.inventorys = this.inventoryService.getInventoryItems();
+    console.log(this.inventorys);
     this.subscription = this.inventoryService.inventoryItemListChangedEvent
       .subscribe(
         (inventoryList: Inventory[]) => {
           this.inventorys = inventoryList;
+          // console.log(this.inventorys);
         }
       );
   }

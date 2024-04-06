@@ -24,7 +24,7 @@ export class InventoryEditComponent implements OnInit {
     this.route.params
       .subscribe(
         (params: Params) => {
-          this.id = params['_id.$oid'];
+          this.id = params['id'];
           if (!this.id) {
             this.editMode = false;
             return;
