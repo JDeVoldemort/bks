@@ -1,1 +1,10 @@
-<p>inventory-item works!</p>
+<p class="list-group-item clearfix documentDiv" [routerLink]="[inventory.id]" routerLinkActive="active" class="list-group-item clearfix">
+
+  <!-- <div class="panel-body"> -->
+    Title: {{ inventory.name }}
+    Author: {{ inventory.author }}
+    Publish Date: {{ inventory.publishDate }}
+    Publisher: {{ inventory.publisher }}
+    Edition: {{ inventory.edition }}
+  <!-- </div> -->
+  </p>

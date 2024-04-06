@@ -1,13 +1,14 @@
 export class Request {
-  public _id: { $oid: string };
+  public id: string; // Add this line
+  public _id: any;
   public name: string;
   public author: string;
   public publishDate: string;
   public publisher: string;
   public edition: string;
 
-  constructor(_id: { $oid: string }, name: string, author: string, publishDate: string, publisher: string, edition: string) {
-    this._id = _id;
+  constructor(id: string, name: string, author: string, publishDate: string, publisher: string, edition: string) {
+    this.id = id; // And this line
     this.name = name;
     this.author = author;
     this.publishDate = publishDate;
