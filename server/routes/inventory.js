@@ -43,8 +43,9 @@ router.post('/', async (req, res, next) => {
 });
 
 router.put('/:id', (req, res, next) => {
-  Inventory.findOne({ _id: req.params.id })
+  Inventory.findOne({ id: req.params.id })
     .then(inventoryItem => {
+      inventoryItem.id = req.body.id;
       inventoryItem.name = req.body.name;
       inventoryItem.pages = req.body.pages;
       inventoryItem.author = req.body.author;
@@ -52,9 +53,10 @@ router.put('/:id', (req, res, next) => {
       inventoryItem.aquireDate = req.body.aquireDate;
       inventoryItem.publisher = req.body.publisher;
       inventoryItem.edition = req.body.edition;
-      // inventoryItem.id = req.body.id;
 
-      Inventory.updateOne({ _id: req.params.id }, inventoryItem)
+      console.log({req: req.body});
+
+      Inventory.updateOne({ id: req.params.id }, inventoryItem)
         .then(result => {
           res.status(204).json({
             message: 'Inventory item updated successfully'
@@ -68,6 +70,7 @@ router.put('/:id', (req, res, next) => {
         });
     })
     .catch(error => {
+      console.log({error: error});
       res.status(500).json({
         message: 'Inventory item not found.',
         error: { inventory: 'Inventory item not found'}

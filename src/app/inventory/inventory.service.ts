@@ -57,7 +57,7 @@ export class InventoryService {
   getMaxId(): number {
     let maxId = 0;
     for (let inventoryItem of this.inventorys) {
-      let currentId = + maxId;
+      let currentId = +inventoryItem.id;
       if (currentId > maxId) {
         maxId = currentId;
       }
