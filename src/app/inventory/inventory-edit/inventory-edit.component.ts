@@ -43,6 +43,7 @@ export class InventoryEditComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     let value = form.value;
+    console.log(value);
     const newInventoryItem = new Inventory(value.id, value.name, value.pages, value.author, value.publishDate, value.aquireDate, value.publisher, value.edition);
     if (this.editMode === true) {
       this.inventoryService.updateInventoryItem(this.originalInventoryItem, newInventoryItem);
